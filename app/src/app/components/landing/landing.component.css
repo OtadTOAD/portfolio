@@ -1,0 +1,60 @@
+:host {
+    height: 100%;
+    max-width: 100%;
+    min-height: fit-content;
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+aside h1 {
+    color: var(--p-primary-color);
+}
+
+.main-body {
+    margin: auto;
+    height: fit-content;
+    max-width: 80%;
+    width: fit-content;
+    background-color: var(--p-surface-900);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    height: fit-content
+}
+
+article .rblx-color {
+    color: var(--p-rose-700);
+}
+
+article .html-color {
+    color: var(--p-indigo-600);
+}
+
+article .php-color {
+    color: var(--p-violet-700);
+}
+
+article .java-color {
+    color: var(--p-orange-400);
+}
+
+article .blender-color {
+    color: var(--p-amber-400);
+}
+
+article .sub-painter-color {
+    color: var(--p-teal-700);
+}
+
+article span {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}

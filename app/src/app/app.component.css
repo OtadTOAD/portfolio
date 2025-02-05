@@ -1,24 +1,74 @@
-:root {
+:host {
     display: flex;
     flex-direction: column;
+    min-height: max-content;
+    height: 100%;
+    width: 100%;
+
+    --foreground-color: var(--p-surface-950);
 }
+
+
+
 
 header {
     width: 100%;
     min-width: max-content;
-    height: fit-content;
+    height: max-content;
     padding: 2rem;
 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    color: var(--p-text-color);
+    background-color: var(--foreground-color);
 }
 
-.body-wrapper {
-    width: 100%;
-    flex: 1;
-    min-height: fit-content;
+
+.logo-wrapper {
+    width: max-content;
+    height: 100%;
+    display: flex;
 }
+
+.logo-wrapper h1 {
+    margin: 0px;
+}
+
+.logo-wrapper a {
+    text-decoration: none;
+    color: var(--p-text-color);
+    text-align: center;
+    margin: auto;
+}
+
+.logo-wrapper span {
+    color: var(--p-primary-color);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    max-width: 40rem;
+    min-width: max-content;
+}
+
+
+
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 
 footer {
     width: 100%;
@@ -26,6 +76,31 @@ footer {
     padding: 2rem;
 
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    color: var(--p-text-color);
+    background-color: var(--foreground-color);
+}
+
+.footer-cards-wrapper {
+    display: flex;
+    min-height: fit-content;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.footer-card-wrapper {
+    width: 30%;
+    min-width: max-content;
+    max-width: 30rem;
+    height: 100%;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer ul {
+    color: var(--p-primary-color);
 }
