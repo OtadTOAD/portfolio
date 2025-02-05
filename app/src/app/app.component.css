@@ -1,0 +1,31 @@
+:root {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    min-width: max-content;
+    height: fit-content;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.body-wrapper {
+    width: 100%;
+    flex: 1;
+    min-height: fit-content;
+}
+
+footer {
+    width: 100%;
+    min-width: max-content;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
