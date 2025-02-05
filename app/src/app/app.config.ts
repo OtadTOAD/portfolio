@@ -5,6 +5,10 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/lara';
 
 import { routes } from './app.routes';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+
+import { provideTranslateService, TranslateLoader } from '@ngx-translate/core'
+import { HttpLoaderFactory } from './app.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +24,14 @@ export const appConfig: ApplicationConfig = {
             order: 'app-styles, primeng'
           },
         }
+      }
+    }),
+    provideHttpClient(),
+    provideTranslateService({
+      loader: {
+        provide: TranslateLoader,
+        deps: [HttpClient],
+        useFactory: HttpLoaderFactory
       }
     }),
     provideZoneChangeDetection({ eventCoalescing: true }),

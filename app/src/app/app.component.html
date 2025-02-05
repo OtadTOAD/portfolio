@@ -3,16 +3,34 @@
     <a routerLink><h1>Otad<span>TOAD</span> </h1></a>
   </div>
 
-  <nav>
+  <nav aria-label="Project Links">
     <p-button [style]="{'margin-right': '0.5rem', 'margin-left': '0.5rem'}"
-      [routerLink]="['projects','web']" label="Web Projects"
+      [routerLink]="['projects','web']" [label]="'WEB_PROJECTS' | translate"
       icon="pi pi-globe" />
     <p-button [style]="{'margin-right': '0.5rem', 'margin-left': '0.5rem'}"
-      [routerLink]="['projects','luau']" label="Luau Projects"
+      [routerLink]="['projects','luau']" [label]="'LUAU_PROJECTS' | translate"
       icon="pi pi-code" />
     <p-button [style]="{'margin-right': '0.5rem', 'margin-left': '0.5rem'}"
-      [routerLink]="['projects','blender']" label="Blender Projects"
+      [routerLink]="['projects','blender']"
+      [label]="'BLENDER_PROJECTS' | translate"
       icon="pi pi-images" />
+  </nav>
+
+  <nav aria-label="Site Controls">
+    <form [formGroup]="form" class="card flex justify-center">
+      <p-select formControlName="lang" [options]="languages"
+        optionLabel="language" placeholder="Select a Language"
+        class="w-full md:w-56" (onChange)="switchLang($event.value)"
+        [style]="{width: '15rem'}" />
+    </form>
+
+    <p-button (click)="showDialog()" [label]="'SEARCH' | translate"
+      icon="pi pi-search" />
+    <p-dialog [header]="'PROJECT_SEARCH' | translate" [modal]="true"
+      [(visible)]="visible"
+      [style]="{width: '25rem'}">
+      <p>HERE!</p>
+    </p-dialog>
   </nav>
 </header>
 
@@ -23,23 +41,26 @@
 <footer>
   <div class="footer-cards-wrapper">
     <div class="footer-card-wrapper">
-      <p-card role="region" aria-label="Contacts" header="Contacts"
+      <p-card role="region" [attr.aria-label]="'CONTACTS' | translate"
+        [header]="'CONTACTS' | translate"
         [style]="{'height': '100%'}">
-        <ng-template #subtitle> My contact information </ng-template>
+        <ng-template #subtitle> {{'CONTACT_SUBTITLES' | translate}}
+        </ng-template>
         <ul>
           <li class="m-0">
             <a href="mailto:diioramashvili@gmail.com"><p-button
-                label="Contact me on gmail" [link]="true"
+                [label]="'CONTACT_GMAIL' | translate" [link]="true"
                 icon="pi pi-inbox" /></a>
           </li>
           <li class="m-0">
             <a href="https://discord.com/users/665583489307115552"
-              target="_blank"><p-button label="Contact me on discord"
+              target="_blank"><p-button [label]="'CONTACT_DISCORD' | translate"
                 [link]="true" icon="pi pi-discord" /></a>
           </li>
           <li class="m-0">
             <a href="https://www.roblox.com/users/1380927411/profile"
-              target="_blank"><p-button label="Contact me on roblox"
+              target="_blank"><p-button [label]="'CONTACT_ROBLOX' | translate"
+                [link]="true"
                 [link]="true">
                 <ng-template #icon>
                   <svg xmlns="http://www.w3.org/2000/svg" width="1em"
@@ -60,7 +81,7 @@
           </li>
           <li class="m-0">
             <a href="https://github.com/OtadTOAD" target="_blank"><p-button
-                label="Contact me on github" [link]="true"
+                [label]="'CONTACT_GITHUB' | translate" [link]="true"
                 icon="pi pi-github" /></a>
           </li>
         </ul>
@@ -68,22 +89,27 @@
     </div>
 
     <div class="footer-card-wrapper">
-      <p-card role="region" aria-label="Navigation" header="Navigation"
+      <p-card role="region" [attr.aria-label]="'NAVIGATION' | translate"
+        [header]="'NAVIGATION' | translate"
         [style]="{'height': '100%'}">
-        <ng-template #subtitle> Navigation links for quick access </ng-template>
+        <ng-template #subtitle> {{'NAVIGATION_SUBTITLES' | translate}}
+        </ng-template>
         <ul>
-          <li><a [routerLink]="['']"><p-button label="Go back"
+          <li><a [routerLink]="['']"><p-button [label]="'GO_BACK' | translate"
                 [link]="true" /></a></li>
           <li><a [routerLink]="['projects', 'blender']"><p-button
-                label="Check out blender projects" [link]="true" /></a></li>
+                [label]="'CHECKOUT_BLENDER' | translate"
+                [link]="true" /></a></li>
           <li><a [routerLink]="['projects', 'luau']"><p-button
-                label="Check out roblox projects" [link]="true" /></a></li>
+                [label]="'CHECKOUT_LUAU' | translate"
+                [link]="true" /></a></li>
           <li><a [routerLink]="['projects', 'web']"><p-button
-                label="Check out web projects" [link]="true" /></a></li>
+                [label]="'CHECKOUT_WEB' | translate"
+                [link]="true" /></a></li>
         </ul>
       </p-card>
     </div>
   </div>
 
-  <p>© 2025 Davit Ioramashvili. All Rights Reserved.</p>
+  <p>{{ "COPYRIGHT" | translate }}</p>
 </footer>

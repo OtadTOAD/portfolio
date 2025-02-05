@@ -1,1 +1,18 @@
-<p>error works!</p>
+<div class="card-wrapper">
+    <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+        <ng-template #title> {{'PAGE_NOT_FOUND' | translate}} </ng-template>
+        <ng-template #subtitle>
+            {{'PAGE_NOT_FOUND_SUBHEADER' | translate}}
+        </ng-template>
+        <p>
+            {{'PAGE_NOT_FOUND_BODY' | translate}}
+        </p>
+        <ng-template #footer>
+            <div class="card-footer">
+                <p-button [routerLink]="['']" [label]="'GO_BACK' | translate"
+                    class="w-full"
+                    styleClass="w-full" />
+            </div>
+        </ng-template>
+    </p-card>
+</div>
