@@ -1,38 +1,14 @@
-<div class="main-body">
-    <aside>
-        <h1>About me</h1>
-    </aside>
-    <article>
-        <span>
-            I specialize in developing games on <span
-                class="rblx-color">Roblox</span>, with a main focus on core
-            backend systems, procedural generation, and gameplay mechanics.
-            I do great in the logical part of the code, like inventory systems,
-            generational algorithms, framework designing, and network handling.
-            I also have experience in front-end development, especially in
-            designing combat effects.
-        </span>
-        <br />
-        <span>
-            Beyond game development, I am a full-stack web developer, proficient
-            both in back-end and front-end technologies.
-            My specialization includes <span class="java-color">Java</span> with
-            <span class="spring-color">Spring Boot</span> for back-end
-            development and Angular for front-end applications,
-            though I'm also comfortable working with just plain <span
-                class="html-color">HTML</span> or <span
-                class="php-color">PHP</span>.
-        </span>
-        <br />
-        <span>
-            I also have lot of experience with <span
-                class="blender-color">blender</span>. I have experience with
-            sculpting, mainly sculpting humanoid characters.
-            I also have experience with creating models with basic subdivison
-            workflow. I can also do textures, both within <span
-                class="blender-color">blender</span> and <span
-                class="sub-painter-color">adobe substance
-                painter</span>.
-        </span>
-    </article>
+<div class="card-wrapper">
+    <p-card>
+        <aside>
+            <h1>{{ "ABOUT_ME" | translate }}</h1>
+        </aside>
+        <article>
+            <article>
+                <p>{{ 'ABOUT_ME_RBLX' | translate }}</p>
+                <p>{{ 'ABOUT_ME_WEB' | translate }}</p>
+                <p>{{ 'ABOUT_ME_BLENDER' | translate }}</p>
+            </article>
+        </article>
+    </p-card>
 </div>

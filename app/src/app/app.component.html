@@ -24,7 +24,10 @@
         [style]="{width: '15rem'}" />
     </form>
 
-    <p-button (click)="showDialog()" [label]="'SEARCH' | translate"
+    <p-button (onClick)="toggleDarkMode()"
+      icon="pi pi-{{ isDarkMode() ? 'sun' : 'moon' }}" rounded="true" />
+
+    <p-button (onClick)="showDialog()" [label]="'SEARCH' | translate"
       icon="pi pi-search" />
     <p-dialog [header]="'PROJECT_SEARCH' | translate" [modal]="true"
       [(visible)]="visible"
@@ -50,18 +53,32 @@
           <li class="m-0">
             <a href="mailto:diioramashvili@gmail.com"><p-button
                 [label]="'CONTACT_GMAIL' | translate" [link]="true"
-                icon="pi pi-inbox" /></a>
+                icon="pi pi-inbox"
+                pTooltip="diioramashvili@gmail.com"
+                tooltipPosition="top"
+                [autoHide]="false" /></a>
           </li>
           <li class="m-0">
             <a href="https://discord.com/users/665583489307115552"
-              target="_blank"><p-button [label]="'CONTACT_DISCORD' | translate"
-                [link]="true" icon="pi pi-discord" /></a>
+              target="_blank">
+              <p-button
+                [label]="'CONTACT_DISCORD' | translate"
+                [link]="true"
+                icon="pi pi-discord"
+                pTooltip="mrotad"
+                tooltipPosition="top"
+                [autoHide]="false" />
+
+            </a>
           </li>
           <li class="m-0">
             <a href="https://www.roblox.com/users/1380927411/profile"
-              target="_blank"><p-button [label]="'CONTACT_ROBLOX' | translate"
+              target="_blank"><p-button
+                [label]="'CONTACT_ROBLOX' | translate"
                 [link]="true"
-                [link]="true">
+                pTooltip="OtadTOAD"
+                tooltipPosition="top"
+                [autoHide]="false">
                 <ng-template #icon>
                   <svg xmlns="http://www.w3.org/2000/svg" width="1em"
                     height="1em" viewBox="0 0 48 48"
@@ -81,8 +98,12 @@
           </li>
           <li class="m-0">
             <a href="https://github.com/OtadTOAD" target="_blank"><p-button
-                [label]="'CONTACT_GITHUB' | translate" [link]="true"
-                icon="pi pi-github" /></a>
+                [label]="'CONTACT_GITHUB' | translate"
+                [link]="true"
+                icon="pi pi-github"
+                pTooltip="OtadTOAD"
+                tooltipPosition="top"
+                [autoHide]="false" /></a>
           </li>
         </ul>
       </p-card>
@@ -96,16 +117,16 @@
         </ng-template>
         <ul>
           <li><a [routerLink]="['']"><p-button [label]="'GO_BACK' | translate"
-                [link]="true" /></a></li>
+                [link]="true" icon="pi pi-undo" /></a></li>
           <li><a [routerLink]="['projects', 'blender']"><p-button
                 [label]="'CHECKOUT_BLENDER' | translate"
-                [link]="true" /></a></li>
+                [link]="true" icon="pi pi-search" /></a></li>
           <li><a [routerLink]="['projects', 'luau']"><p-button
                 [label]="'CHECKOUT_LUAU' | translate"
-                [link]="true" /></a></li>
+                [link]="true" icon="pi pi-search" /></a></li>
           <li><a [routerLink]="['projects', 'web']"><p-button
                 [label]="'CHECKOUT_WEB' | translate"
-                [link]="true" /></a></li>
+                [link]="true" icon="pi pi-search" /></a></li>
         </ul>
       </p-card>
     </div>

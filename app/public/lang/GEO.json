@@ -1,7 +1,8 @@
 {
-    "COPYRIGHT": "© 2025 Davit Ioramashvili. All Rights Reserved.",
+    "COPYRIGHT": "© 2025 დავით იორამაშვილი. ყველა უფლება დაცულია.",
     "ENG": "ინგლისური",
     "GEO": "ქართული",
+    "ABOUT_ME": "ჩემს შესახებ",
     "CONTACT_GMAIL": "დამიკავშირდი გმაილზე",
     "CONTACT_DISCORD": "დამიკავშირდი დისკორდზე",
     "CONTACT_ROBLOX": "დამიკავშირდი რობლოქსზე",
@@ -15,11 +16,11 @@
     "BLENDER_PROJECTS": "ბლენდერის პროექტები",
     "SEARCH": "ძებნა",
     "CONTACTS": "კონტაკტები",
-    "CONTACT_SUBTITLES": "აქ დამიკავშირდით(?)",
+    "CONTACT_SUBTITLES": "ჩემი საკონტაქტო ინფორმაცია",
     "NAVIGATION": "ნავიგაცია",
-    "NAVIGATION_SUBTITLES": "ლინკები სწრაფი ნავიგაციისთვის",
+    "NAVIGATION_SUBTITLES": "ბმულები სწრაფი ნავიგაციისთვის",
     "PROJECT_SEARCH": "პროექტების ძიება",
-    "PAGE_NOT_FOUND": "Page Not Found",
-    "PAGE_NOT_FOUND_SUBHEADER": "Sorry, we couldn’t find anything at that address.",
-    "PAGE_NOT_FOUND_BODY": "Please check the URL for any typos or ensure the page hasn’t been moved or deleted."
+    "PAGE_NOT_FOUND": "გვერდი არ მოიძებნა",
+    "PAGE_NOT_FOUND_SUBHEADER": "ვწუხვარ, ვერაფერი მოვძებნეთ ამ მისამართზე.",
+    "PAGE_NOT_FOUND_BODY": "გთხოვთ, შეამოწმოთ ბმული ნებისმიერი ბეჭდვითი შეცდომებისთვის ან დარწმუნდით, რომ გვერდი არ არის გადატანილი ან წაშლილი."
 }

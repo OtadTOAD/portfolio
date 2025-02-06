@@ -12,14 +12,14 @@ aside h1 {
     color: var(--p-primary-color);
 }
 
-.main-body {
+.card-wrapper {
     margin: auto;
     height: fit-content;
     max-width: 80%;
     width: fit-content;
-    background-color: var(--p-surface-900);
     padding: 2rem;
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 article {
@@ -30,31 +30,7 @@ article {
     height: fit-content
 }
 
-article .rblx-color {
-    color: var(--p-rose-700);
-}
-
-article .html-color {
-    color: var(--p-indigo-600);
-}
-
-article .php-color {
-    color: var(--p-violet-700);
-}
-
-article .java-color {
-    color: var(--p-orange-400);
-}
-
-article .blender-color {
-    color: var(--p-amber-400);
-}
-
-article .sub-painter-color {
-    color: var(--p-teal-700);
-}
-
-article span {
+article p {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
 }

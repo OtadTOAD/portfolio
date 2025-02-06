@@ -9,6 +9,7 @@ import { SelectModule } from 'primeng/select';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TooltipModule } from 'primeng/tooltip';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './lang/', '.json');
@@ -21,7 +22,7 @@ interface LanguageOption {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, ButtonModule, CardModule, CascadeSelectModule, DialogModule, SelectModule, ReactiveFormsModule, TranslatePipe],
+  imports: [RouterOutlet, RouterLink, ButtonModule, CardModule, CascadeSelectModule, DialogModule, SelectModule, ReactiveFormsModule, TranslatePipe, TooltipModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -36,12 +37,17 @@ export class AppComponent {
 
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('ENG');
-    translate.use('ENG');
+    translate.use(sessionStorage.getItem('preferredLang') || 'ENG');
 
     this.updateLanguageOptions();
     translate.onLangChange.subscribe(() => {
       this.updateLanguageOptions();
     });
+
+    const lightPref = sessionStorage.getItem('lightMode')
+    if (lightPref && JSON.parse(lightPref)) {
+      this.toggleDarkMode()
+    }
   }
 
   updateLanguageOptions() {
@@ -50,13 +56,31 @@ export class AppComponent {
       { value: 'GEO', language: this.translate.instant('GEO') }
     ];
 
-    console.log(this.form.get('lang')?.value)
-    console.log(this.translate.currentLang)
     const currLang = this.translate.currentLang;
     this.form.get('lang')?.setValue({ value: currLang, language: this.translate.instant(currLang) });
   }
 
+  isDarkMode(): boolean {
+    const element = document.querySelector('html');
+    if (element == null) {
+      console.error("Could not find HTML element!");
+      return false;
+    }
+    return element.classList.contains('my-app-dark');
+  }
+  toggleDarkMode() {
+    const element = document.querySelector('html');
+    if (element == null) {
+      console.error("Could not find HTML element!");
+      return;
+    }
+    element.classList.toggle('my-app-dark');
+
+    sessionStorage.setItem('lightMode', JSON.stringify(!this.isDarkMode()))
+  }
+
   switchLang(lang: LanguageOption) {
+    sessionStorage.setItem('preferredLang', lang.value);
     this.translate.use(lang.value);
   }
 
